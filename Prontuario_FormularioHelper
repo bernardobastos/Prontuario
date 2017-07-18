@@ -1,0 +1,57 @@
+package br.ufba.dcc.prontuario.modelo;
+
+import android.widget.EditText;
+
+import br.ufba.dcc.prontuario.R;
+
+/**
+ * Created by Bernardo Bastos on 18/07/2017.
+ */
+
+public class FormularioHelper {
+
+    private final EditText campoNome;
+    private final EditText campoEndereco;
+    private final EditText campoTelefone;
+    private final EditText campoIdade;
+    private final EditText campoPeso;
+    private final EditText campoAltura;
+    private final EditText campoPatologia;
+    private Paciente paciente;
+
+    public FormularioHelper(FormularioActivity activity){
+
+        campoNome = (EditText) activity.findViewById(R.id.formulario_nome);
+        campoEndereco = (EditText) activity.findViewById(R.id.formulario_endereco);
+        campoTelefone = (EditText) activity.findViewById(R.id.formulario_telefone);
+        campoIdade = (EditText) activity.findViewById(R.id.formulario_idade);
+        campoPeso = (EditText) activity.findViewById(R.id.formulario_peso);
+        campoAltura = (EditText) activity.findViewById(R.id.formulario_altura);
+        campoPatologia = (EditText) activity.findViewById(R.id.formulario_patologia);
+        paciente = new Paciente();
+    }
+
+    public Paciente pegaPaciente() {
+        Paciente paciente = new Paciente();
+        paciente.setNome(campoNome.getText().toString());
+        paciente.setEndereco(campoEndereco.getText().toString());
+        paciente.setTelefone(campoTelefone.getText().toString());
+        paciente.setIdade(campoIdade.getText().toString());
+        paciente.setPeso(campoPeso.getText().toString());
+        paciente.setAltura(campoAltura.getText().toString());
+        paciente.setPatologia(campoPatologia.getText().toString());
+        return paciente;
+    }
+
+    public void preencheFormulario(Paciente paciente){
+        campoNome.setText(paciente.getNome());
+        campoEndereco.setText(paciente.getEndereço());
+        campoTelefone.setText(paciente.getTelefone());
+        campoIdade.setText(paciente.getIdade());
+        campoPeso.setText(paciente.getPeso());
+        campoAltura.setText(paciente.getAltura());
+        campoPatologia.setText(paciente.getPatologia());
+        this.paciente = paciente;
+
+    }
+}
