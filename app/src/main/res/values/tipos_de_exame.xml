@@ -8,5 +8,14 @@
         <item>Antibiograma</item>
         <item>Anuscopia</item>
         <item>Aortografia</item>
+        <item>Colesterol Total</item>
+        <item>Hemograma</item>
+        <item>Hemoderivados</item>
+        <item>Parasitologico</item>
+        <item>Raio X</item>
+        <item>Sumáriode Urina</item>
+        <item>Triglicerides</item>
+        <item>Teste Ergonomico</item>
+
     </string-array>
 </resources>
